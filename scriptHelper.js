@@ -27,8 +27,12 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    if (validateInput(pilot) == "empty" || ) 
+    if (validateInput(pilot) === "empty" || validateInput(copilot) === "empty" || validateInput(fuelLevel) === "empty" || validateInput(cargoLevel)  === "empty" ) {
+        alert("All fields required");
+    }
     //    to do --check all forms are filled,--if not add window alert saying "all fields required"  make sure correct data type  
+    // validate all correct type--set up an else if i.e if (validateInput) pilot == is a number == 
+    // final else statement going into fuel levels and cargo levels --nested if else blocks
 }
 
 async function myFetch() {
