@@ -8,8 +8,8 @@ window.addEventListener("load", function() {
     event.preventDefault();
     const pilot = document.querySelector("input[name=pilotName]").value;
     const copilot = document.querySelector("input[name=copilotName]").value;
-    const fuelLevel = document.querySelector("input[name=fuelLevel]").value;
-    const cargoLevel = document.querySelector("input[name=cargoMass]").value;
+    const fuelLevel = Number(document.querySelector("input[name=fuelLevel]").value);
+    const cargoLevel = Number(document.querySelector("input[name=cargoMass]").value);
       
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
         });
