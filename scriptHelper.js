@@ -41,30 +41,57 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number") {
         alert("Needs to be a number");
     } else if (fuelLevel < 10000 && cargoLevel < 10000) {
-        faultyItems.style.visibility = "visible" 
-        launchStatus.style.color = "#C7254E " 
+        faultyItems.style.visibility = "visible"
+        launchStatus.style.color = "#C7254E"
         launchStatus.innerHTML = "Shuttle not ready for launch"
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
         copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`
         fuelStatus.innerHTML = "Fuel level too low for launch"
         cargoStatus.innerHTML = "Cargo mass low enough for launch"
     
-    } else if  
+    } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
+        faultyItems.style.visibility = "visible"
+        launchStatus.style.color = "#C7254E"
+        launchStatus.innerHTML = "Shuttle not ready for launch"
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
+        copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`
+        fuelStatus.innerHTML = "Fuel level high enough for launch"
+        cargoStatus.innerHTML = "Cargo mass too heavy for launch"
+    
+    } else if (fuelLevel < 10000 && cargoLevel > 10000) {
+        faultyItems.style.visibility = "visible"
+        launchStatus.style.color = "#C7254E"
+        launchStatus.innerHTML = "Shuttle not ready for launch"
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
+        copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`
+        fuelStatus.innerHTML = "Fuel level too low for launch"
+        cargoStatus.innerHTML = "Cargo mass too heavy for launch"
+    
+    } else if (fuelLevel >= 10000 && cargoLevel < 10000) {
+        faultyItems.style.visibility = "visible"
+        launchStatus.style.color = "#419F6A"
+        launchStatus.innerHTML = "Shuttle is ready for launch"
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
+        copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`
+        fuelStatus.innerHTML = "Fuel level high enough for launch"
+        cargoStatus.innerHTML = "Cargo mass low enough for launch"
+        }
+    
+    }
 
-    
-    
-} 
-
-    
+  
 
 async function myFetch() {
-    let planetsReturned;
+    let planetsReturned =;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
+    planetsReturned = await fetch(https://handlers.education.launchcode.org/static/planets.json).then(function(response) {
 
+    }
+        
+
+    return Response.json
     return planetsReturned;
-}
+ 
 
 function pickPlanet(planets) {
 }
