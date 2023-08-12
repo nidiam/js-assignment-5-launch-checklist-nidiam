@@ -39,9 +39,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields required");
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
-        alert("Needs to be a string");
+        alert("Make sure to enter valid information for each field!");
     } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number") {
-        alert("Needs to be a number");
+        alert("Make sure to enter valid information for each field!");
     } else if (fuelLevel < 10000 && cargoLevel < 10000) {
         faultyItems.style.visibility = "visible"
         launchStatus.style.color = "#C7254E"
