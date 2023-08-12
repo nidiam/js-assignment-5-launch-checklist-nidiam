@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { pickPlanet } = require("./scriptHelper");
+const { pickPlanet, myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
    
@@ -19,16 +19,17 @@ window.addEventListener("load", function() {
          
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = fetch("https://handlers.education.launchcode.org/static/planets.json");
+   let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-  
-    pickPlanet(planets)
-
+// TO DO:  define variable assign it to data returned by pick planet function (listed planets )the my function
+       let planets = pickPlanet(listedPlanets);
+       addDestinationInfo(document,planets.name,planets.diameter,planets.star,planets.distance,planets.moons,planets.imageUrl);
+       
     });
     
            
